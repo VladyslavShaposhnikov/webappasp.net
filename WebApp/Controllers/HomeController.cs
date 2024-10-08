@@ -34,6 +34,24 @@ public class HomeController : Controller
         return View();
     }
     
-    
+    public IActionResult Calculator(string op, double x, double y)
+    {
+        switch(op)
+        {
+            case "add":
+                ViewBag.Result = x + y;
+                break;
+            case "sub":
+                ViewBag.Result = x - y;
+                break;
+            case "mul":
+                ViewBag.Result = x * y;
+                break;
+            case "div":
+                ViewBag.Result = x / y;
+                break;
+        }
+        return View();
+    }
 
 }
