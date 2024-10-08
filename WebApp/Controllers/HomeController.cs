@@ -36,6 +36,11 @@ public class HomeController : Controller
     
     public IActionResult Calculator(string op, double x, double y)
     {
+        ViewBag.x = x;
+        ViewBag.y = y;
+        
+        ViewBag.op = op;
+        
         switch(op)
         {
             case "add":
