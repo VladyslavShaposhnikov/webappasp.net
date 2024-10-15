@@ -5,7 +5,7 @@ namespace WebApp.Controllers;
 public class CalculatorController : Controller
 {
     // GET
-    public IActionResult Index()
+    public IActionResult Form()
     {
         return View();
     }
