@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-
+using WebApp.Models;
 namespace WebApp.Controllers;
 
 public class CalculatorController : Controller
@@ -10,28 +10,12 @@ public class CalculatorController : Controller
         return View();
     }
     
-    public IActionResult Result(string op, double x, double y)
+    public IActionResult Result(Calculator model)
     {
-        ViewBag.result_x = x;
-        ViewBag.result_y = y;
-        
-        ViewBag.result_op = op;
-        
-        switch(op)
+        if (!model.IsValid())
         {
-            case "add":
-                ViewBag.Result = x + y;
-                break;
-            case "sub":
-                ViewBag.Result = x - y;
-                break;
-            case "mul":
-                ViewBag.Result = x * y;
-                break;
-            case "div":
-                ViewBag.Result = x / y;
-                break;
+            return View("Error");
         }
-        return View();
+        return View(model);
     }
 }

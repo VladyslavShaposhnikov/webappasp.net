@@ -1,17 +1,4 @@
-
-@{
-    Layout = null;
-}
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <title>title</title>
-</head>
-<body>
-<div>
-    <div class="container">
+<div class="container">
         <div class="row justify-content-md-center">
             <div class="col-6">
                 <h2>Kalkulator</h2>
@@ -21,8 +8,13 @@
                         <input class="form-control" type="number" name="x" step="0.00001" id="x"/>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label" for="operator">Operator</label>
-                        <input class="form-control" type="text" name="op" id="operator"/>
+                        <label class="form-label" for="op">Operator</label>
+                        <select name="op">
+                            <option value="add">+</option>
+                            <option value="sub">&minus;</option>
+                            <option value="mul">&times;</option>
+                            <option value="div">&divide;</option>
+                        </select>
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="y">Liczba 2</label>
@@ -35,6 +27,3 @@
             </div>
         </div>
     </div>
-</div>
-</body>
-</html>
